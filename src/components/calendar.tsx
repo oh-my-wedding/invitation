@@ -1,4 +1,5 @@
 import classNames from 'classnames';
+import { differenceInDays } from 'date-fns';
 
 const WEEKS = ['일', '월', '화', '수', '목', '금', '토'];
 const DAYS = [
@@ -8,6 +9,7 @@ const DAYS = [
   ['18', '19', '20', '21', '22', '23', '24'],
   ['25', '26', '27', '28', '29', '30', '31'],
 ];
+const targetDate = new Date('2025-05-25T03:00:00.000Z');
 
 export const Calendar = () => {
   return (
@@ -48,6 +50,9 @@ export const Calendar = () => {
             ))}
           </div>
         ))}
+      </div>
+      <div className="text-xs tracking-[0.2em]">
+        우리의 예식까지 남은 시간, <b>{differenceInDays(targetDate, new Date())}일</b>
       </div>
     </div>
   );
