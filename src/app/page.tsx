@@ -35,13 +35,39 @@ export default function Home() {
             <Image
               src="/invitation/images/duckboon-char.png"
               alt="Main Image"
-              width={46}
-              height={46}
+              width={64}
+              height={64}
             />
           </div>
-          <p>결혼합니다.</p>
-          <p></p>
-          <p>멘트 멘트 멘트</p>
+          <div className="tracking-[0.2em] leading-[2em]">
+            <p>함께 다니는 캠핑이 즐거워</p>
+            <p>결혼하고 싶어진 현규,</p>
+            <br/>
+            <p>이상형인 착하고 재밌는 사람을 만나</p>
+            <p>결혼을 결심한 희진</p>
+            <br/>
+            <p>저희 둘이 한 가족이 되어</p>
+            <p>기쁜 일도, 슬픈 일도 함께하려고 합니다.</p>
+            <br/>
+            <p>부디 귀한 걸음 하시어</p>
+            <p>새로운 시작을 함께해 주세요!</p>
+          </div>
+          <div className="mt-12 leading-[2em]">
+            <div>
+              <span>안홍기</span>
+              <span> · </span>
+              <span>이귀분</span>
+              <span>의 아들</span>
+              <span>현규</span>
+            </div>
+            <div>
+              <span>홍인덕</span>
+              <span> · </span>
+              <span>이현자</span>
+              <span>의 딸</span>
+              <span>희진</span>
+            </div>
+          </div>
         </SectionView>
 
         <div className="bg-white shadow-sm py-16">
