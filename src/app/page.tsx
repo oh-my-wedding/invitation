@@ -61,19 +61,28 @@ export default function Home() {
           <KakaoMaps />
           <div className="pt-4 px-2">
             <div className="px-4 flex justify-between">
-              <div className="mx-1 h-12 flex flex-1 justify-center items-center bg-white rounded-xl">
+              <div
+                style={{ boxShadow: '0px 0px 16px rgb(0 0 0 / 6%)' }}
+                className="mx-1 h-[45px] flex flex-1 justify-center items-center bg-white rounded-xl"
+              >
                 <Image src="/invitation/icons/navermap-icon.png" alt="Naver Map" width={20} height={20} />
                 <span className="ml-1">
                   네이버지도
                 </span>
               </div>
-              <div className="mx-1 h-12 flex flex-1 justify-center items-center bg-white rounded-xl">
+              <div
+                style={{ boxShadow: '0px 0px 16px rgb(0 0 0 / 6%)' }}
+                className="mx-1 h-[45px] flex flex-1 justify-center items-center bg-white rounded-xl"
+              >
                 <Image src="/invitation/icons/kakaomap-icon.png" alt="Kakao Map" width={20} height={20} />
                 <span className="ml-1">
                   카카오맵
                 </span>
               </div>
-              <div className="mx-1 h-12 flex flex-1 justify-center items-center bg-white rounded-xl">
+              <div
+                style={{ boxShadow: '0px 0px 16px rgb(0 0 0 / 6%)' }}
+                className="mx-1 h-[45px] flex flex-1 justify-center items-center bg-white rounded-xl"
+              >
                 <Image src="/invitation/icons/tmap-icon.png" alt="T Map" width={20} height={20} />
                 <span className="ml-1">
                   티앱
