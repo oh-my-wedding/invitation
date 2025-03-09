@@ -8,8 +8,7 @@ import { Calendar } from "@/components/calendar";
 export default function Home() {
   return (
     <div className="bg-[#f8f8f8] relative flex flex-col justify-center items-center">
-      <div className="bg-[#fcfaf8]relative h-full w-full max-w-[430px] shadow-lg text-center">
-
+      <div className="bg-[#fcfaf8] relative h-full w-full max-w-[430px] shadow-lg text-center">
         <div className="relative bg-[#ffffff] shadow-sm">
           <div className="relative h-[600px] w-full">
             <Image
@@ -44,11 +43,21 @@ export default function Home() {
           <p></p>
           <p>멘트 멘트 멘트</p>
         </SectionView>
-          
+
+        <div className="bg-white shadow-sm py-16">
+          <p className="tracking-[0.3em] text-sm">THE WEDDING DAY</p>
+          <Calendar />
+        </div>
 
         <SectionView>
-          <p>LOCATION</p>
-          <p>오시는 길</p>
+          <div>
+            <p className="tracking-[0.3em] text-xs">LOCATION</p>
+            <p className="tracking-[0.3em] pt-2">오시는 길</p>
+          </div>
+          <div className="pt-8">
+            <p className="tracking-[0.3em]">헤이스가든</p>
+            <p className="tracking-[0.1em] pt-2 text-[#4E4C4B] text-sm">서울 서초구 신흥안길 40-15</p>
+          </div>
           <KakaoMaps />
           <div className="pt-4 px-2">
             <div className="px-4 flex justify-between">
@@ -72,11 +81,6 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </SectionView>
-
-        <SectionView>
-          <p className="tracking-[0.3em] text-sm">THE WEDDING DAY</p>
-          <Calendar />
         </SectionView>
 
         <SectionView>

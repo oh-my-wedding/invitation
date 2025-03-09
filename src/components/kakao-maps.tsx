@@ -11,17 +11,25 @@ export const KakaoMaps = () => {
     }
     
     (window as any).kakao?.maps?.load(() => {
+      const targetPosition = new (window as any).kakao.maps.LatLng(37.4544244, 127.0760178);
       const options =  {
-        center: new (window as any).kakao.maps.LatLng(33.450701, 126.570667),
+        center: targetPosition,
         level: 3,
+        draggable: false,
       };
-      new  (window as any).kakao.maps.Map(ref.current, options);
+      const map = new (window as any).kakao.maps.Map(ref.current, options);
+
+      const marker = new (window as any).kakao.maps.Marker({
+        position: targetPosition,
+      });
+
+      marker.setMap(map);
     });
   }, []);
 
   return (
-    <div>
-      <div className="h-[230px]" ref={ref}></div>
+    <div className="pt-12">
+      <div className="h-[320px]" ref={ref}></div>
     </div>
   );
 };
