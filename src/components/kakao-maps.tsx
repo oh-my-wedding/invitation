@@ -10,7 +10,7 @@ export const KakaoMaps = () => {
       return;
     }
     
-    (window as any).kakao.maps?.load(() => {
+    (window as any).kakao?.maps?.load(() => {
       const options =  {
         center: new (window as any).kakao.maps.LatLng(33.450701, 126.570667),
         level: 3,
