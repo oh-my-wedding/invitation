@@ -3,6 +3,7 @@ import Image from "next/image";
 import { KakaoMaps } from "@/components/kakao-maps";
 import { Comments } from "@/components/comments";
 import { SectionView } from "@/components/section.view";
+import { Calendar } from "@/components/calendar";
 
 export default function Home() {
   return (
@@ -73,7 +74,10 @@ export default function Home() {
           </div>
         </SectionView>
 
-
+        <SectionView>
+          <p className="tracking-[0.3em] text-sm">THE WEDDING DAY</p>
+          <Calendar />
+        </SectionView>
 
         <SectionView>
           <Comments /> 
