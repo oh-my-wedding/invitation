@@ -1,6 +1,12 @@
+'use client';
+
 import classNames from 'classnames';
 import { differenceInDays } from 'date-fns';
-import { EventCountdown } from '@/components/event-countdown';
+import dynamic from 'next/dynamic';
+
+const EventCountdown = dynamic(() => import('@/components/event-countdown'),
+  { ssr: false }
+);
 
 const WEEKS = ['일', '월', '화', '수', '목', '금', '토'];
 const DAYS = [

@@ -9,7 +9,7 @@ interface FlipProps {
   value: string;
 }
 
-export const EventCountdown = ({ value }: FlipProps) => {
+const EventCountdown = ({ value }: FlipProps) => {
   const divRef = useRef<HTMLDivElement>(null);
   const tickRef = useRef<any>(null);
 
@@ -107,3 +107,5 @@ export const EventCountdown = ({ value }: FlipProps) => {
     </div>
   );
 };
+
+export default EventCountdown;
