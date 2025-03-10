@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import { differenceInDays } from 'date-fns';
+import { EventCountdown } from '@/components/event-countdown';
 
 const WEEKS = ['일', '월', '화', '수', '목', '금', '토'];
 const DAYS = [
@@ -51,10 +52,14 @@ export const Calendar = () => {
           </div>
         ))}
       </div>
-      <div className="text-xs tracking-[0.2em]">
+
+      <div>
+        <EventCountdown value="2025-05-25T12:00:00+09:00" />
+      </div>
+
+      <div className="mt-8 text-xs tracking-[0.2em]">
         우리의 예식까지 남은 시간, <b>{differenceInDays(targetDate, new Date())}일</b>
       </div>
     </div>
   );
 };
-
