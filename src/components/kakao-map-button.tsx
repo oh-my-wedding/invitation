@@ -2,9 +2,11 @@
 
 import Image from "next/image";
 
+const SCHEME = 'kakaomap://place?id=945299203';
+
 export const KakaoMapButton = () => {
   const handleClick = () => {
-    console.log('click');
+    window.location.href = SCHEME;
   };
 
   return (

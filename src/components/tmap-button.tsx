@@ -2,9 +2,11 @@
 
 import Image from "next/image";
 
+const SCHEME = `tmap://search?name=${encodeURIComponent('헤이스가든')}`;
+
 export const TMapButton = () => {
   const handleClick = () => {
-    console.log('click');
+    window.location.href = SCHEME;
   };
 
   return (
