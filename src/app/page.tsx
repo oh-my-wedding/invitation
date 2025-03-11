@@ -4,6 +4,9 @@ import { KakaoMaps } from "@/components/kakao-maps";
 import { Comments } from "@/components/comments";
 import { SectionView } from "@/components/section.view";
 import { Calendar } from "@/components/calendar";
+import { NaverMapButton } from "@/components/naver-map-button";
+import { KakaoMapButton } from "@/components/kakao-map-button";
+import { TMapButton } from "@/components/tmap-button";
 
 export default function Home() {
   return (
@@ -84,36 +87,21 @@ export default function Home() {
             <p className="tracking-[0.3em]">헤이스가든</p>
             <p className="tracking-[0.1em] pt-2 text-[#4E4C4B] text-sm">서울 서초구 신흥안길 40-15</p>
           </div>
+
           <KakaoMaps />
+
           <div className="pt-4 px-2">
             <div className="px-4 flex justify-between">
-              <div
-                style={{ boxShadow: '0px 0px 16px rgb(0 0 0 / 6%)' }}
-                className="mx-1 h-[45px] flex flex-1 justify-center items-center bg-white rounded-xl"
-              >
-                <Image src="/invitation/icons/navermap-icon.png" alt="Naver Map" width={20} height={20} />
-                <span className="ml-1">
-                  네이버지도
-                </span>
-              </div>
-              <div
-                style={{ boxShadow: '0px 0px 16px rgb(0 0 0 / 6%)' }}
-                className="mx-1 h-[45px] flex flex-1 justify-center items-center bg-white rounded-xl"
-              >
-                <Image src="/invitation/icons/kakaomap-icon.png" alt="Kakao Map" width={20} height={20} />
-                <span className="ml-1">
-                  카카오맵
-                </span>
-              </div>
-              <div
-                style={{ boxShadow: '0px 0px 16px rgb(0 0 0 / 6%)' }}
-                className="mx-1 h-[45px] flex flex-1 justify-center items-center bg-white rounded-xl"
-              >
-                <Image src="/invitation/icons/tmap-icon.png" alt="T Map" width={20} height={20} />
-                <span className="ml-1">
-                  티앱
-                </span>
-              </div>
+              <NaverMapButton />
+              <KakaoMapButton />
+              <TMapButton />
+            </div>
+          </div>
+
+          <div>
+            <p>주차 안내</p>
+            <div>
+              안녕
             </div>
           </div>
         </SectionView>
