@@ -16,7 +16,7 @@ export default function Home() {
         <div className="relative bg-[#ffffff] shadow-sm">
           <div className="relative h-[600px] w-full">
             <Image
-              src="/invitation/images/front.jpg"
+              src="/invitation/images/banner.jpg"
               alt="Main Image"
               fill
               priority
