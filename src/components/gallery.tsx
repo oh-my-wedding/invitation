@@ -15,18 +15,25 @@ const IMAGES = [
 
 export const Gallery = () => {
   return (
-    <div className="relative my-8">
+    <div className="relative my-16">
       <Swiper
         slidesPerView={1}
-        rewind={true}
+        speed={800}
+        loop
       >
         {IMAGES.map((imageUrl, index) => (
           <SwiperSlide key={index}>
-            <img
-              src={imageUrl}
-              alt="Gallery Image"
-              className="w-full"
-            />
+            <div className="relative flex">
+              <img
+                src={imageUrl}
+                alt="Gallery Image"
+                style={{
+                  width: '100%',
+                  height: 650,
+                  objectFit: 'contain'
+                }}
+              />
+            </div>
           </SwiperSlide>
         ))}
       <SlideActions />
