@@ -7,6 +7,7 @@ import { Calendar } from "@/components/calendar";
 import { NaverMapButton } from "@/components/naver-map-button";
 import { KakaoMapButton } from "@/components/kakao-map-button";
 import { TMapButton } from "@/components/tmap-button";
+import { Gallery } from "@/components/gallery";
 
 export default function Home() {
   return (
@@ -19,6 +20,16 @@ export default function Home() {
               alt="Main Image"
               fill
               priority
+            />
+            <div
+              style={{
+                position: 'absolute',
+                bottom: 0,
+                left: 0,
+                width: '100%',
+                height: '15%',
+                background: 'linear-gradient(rgba(255, 255, 255, 0) 0%, rgb(255, 255, 255) 90%)',
+              }}
             />
           </div>
           <div className="flex justify-center items-center py-8">
@@ -103,6 +114,14 @@ export default function Home() {
             <div>
               안녕
             </div>
+          </div>
+        </SectionView>
+          
+        <SectionView>
+          <div>
+            <p className="tracking-[0.3em] text-xs">GALLERY</p>
+            <p className="tracking-[0.3em] pt-2">갤러리</p>
+            <Gallery />
           </div>
         </SectionView>
 
