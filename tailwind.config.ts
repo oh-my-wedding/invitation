@@ -12,6 +12,10 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        suit: ['var(--font-suit)'],
+        sometimesTimes: ['var(--font-sometimes-times)'],
+      },
     },
   },
   plugins: [],

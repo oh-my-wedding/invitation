@@ -40,7 +40,7 @@ const EventCountdown = ({ value }: FlipProps) => {
     };
 
     return () => {
-      counter.timer.stop();
+      counter.timer?.stop();
     };
   }, [value]);
 

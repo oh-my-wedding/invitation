@@ -8,16 +8,23 @@ import { NaverMapButton } from "@/components/naver-map-button";
 import { KakaoMapButton } from "@/components/kakao-map-button";
 import { TMapButton } from "@/components/tmap-button";
 import { Gallery } from "@/components/gallery";
+import { Accordion } from "@/components/accordion";
 
 export default function Home() {
   return (
     <div className="bg-[#f8f8f8] relative flex flex-col justify-center items-center">
       <div className="bg-[#fcfaf8] relative h-full w-full max-w-[430px] shadow-lg text-center">
         <div className="relative bg-[#ffffff] shadow-sm">
-          <div className="relative h-[600px] w-full">
+          <div className="relative h-[600px] w-full text-white">
+            <h1 className="text-4xl font-sometimesTimes whitespace-normal w-full break-all absolute top-32 z-10">
+              <p>HYEONGYU & HEEJIN</p>
+            </h1>
             <Image
               src="/invitation/images/banner.jpg"
               alt="Main Image"
+              style={{
+                objectFit: 'cover',
+              }}
               fill
               priority
             />
@@ -32,7 +39,7 @@ export default function Home() {
               }}
             />
           </div>
-          <div className="flex justify-center items-center py-8">
+          <div className="flex justify-center items-center py-8 font-suit">
             <p className="text-xl tracking-[5px]">안현규</p>
             <div className="mx-8 border border-1 h-6"></div>
             <p className="text-xl tracking-[5px]">홍희진</p>
@@ -53,7 +60,7 @@ export default function Home() {
               height={64}
             />
           </div>
-          <div className="tracking-[0.2em] leading-[2em]">
+          <div className="tracking-[0.2em] leading-[2em] font-suit font-thin">
             <p>함께 다니는 캠핑이 즐거워</p>
             <p>결혼하고 싶어진 현규,</p>
             <br/>
@@ -85,13 +92,13 @@ export default function Home() {
         </SectionView>
 
         <div className="bg-white shadow-sm py-16">
-          <p className="tracking-[0.3em] text-sm">THE WEDDING DAY</p>
+          <p className="tracking-[0.3em] text-sm font-sometimesTimes">THE WEDDING DAY</p>
           <Calendar />
         </div>
 
         <SectionView>
           <div>
-            <p className="tracking-[0.3em] text-xs">LOCATION</p>
+            <p className="tracking-[0.3em] text-xs font-sometimesTimes">LOCATION</p>
             <p className="tracking-[0.3em] pt-2">오시는 길</p>
           </div>
           <div className="pt-8">
@@ -119,10 +126,21 @@ export default function Home() {
           
         <SectionView>
           <div>
-            <p className="tracking-[0.3em] text-xs">GALLERY</p>
+            <p className="tracking-[0.3em] text-xs font-sometimesTimes">GALLERY</p>
             <p className="tracking-[0.3em] pt-2">갤러리</p>
             <Gallery />
           </div>
+        </SectionView>
+
+        <SectionView>
+          <div>
+            <p className="tracking-[0.3em] pt-2">마음 전하실 곳</p>
+            <div className="mt-8">
+              <Accordion title="신랑측" />
+              <Accordion title="신부측" />
+            </div>
+          </div>
+          
         </SectionView>
 
         <SectionView>

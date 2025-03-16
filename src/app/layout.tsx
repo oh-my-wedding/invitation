@@ -2,9 +2,16 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
-const nanumMyeongjo = localFont({
-  src: './font/NanumMyeongjo.otf',
+const suit = localFont({
+  src: './font/SuitRegular.woff2',
   display: 'swap',
+  variable: '--font-suit',
+});
+
+const sometimesTimes = localFont({
+  src: './font/SometimesTimesRegular.woff2',
+  display: 'swap',
+  variable: '--font-sometimes-times',
 });
 
 export const metadata: Metadata = {
@@ -20,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=bcb9c3eac6aa813db022f267e80b43cd&autoload=false" async></script>
-      <body className={nanumMyeongjo.className}>
+      <body className={`${suit.variable} ${sometimesTimes.variable}`}>
         {children}
       </body>
     </html>
