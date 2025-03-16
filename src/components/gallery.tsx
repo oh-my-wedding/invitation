@@ -15,7 +15,7 @@ const IMAGES = [
 
 export const Gallery = () => {
   return (
-    <div className="relative my-16">
+    <div className="relative my-12">
       <Swiper
         slidesPerView={1}
         speed={800}

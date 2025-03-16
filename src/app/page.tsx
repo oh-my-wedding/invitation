@@ -9,12 +9,15 @@ import { KakaoMapButton } from "@/components/kakao-map-button";
 import { TMapButton } from "@/components/tmap-button";
 import { Gallery } from "@/components/gallery";
 import { Accordion } from "@/components/accordion";
+import { CarSvg } from "@/svg/car-svg";
+import { BusSvg } from "@/svg/bus-svg";
+import { SubwaySvg } from "@/svg/subway.svg";
 
 export default function Home() {
   return (
     <div className="bg-[#f8f8f8] relative flex flex-col justify-center items-center">
       <div className="bg-[#fcfaf8] relative h-full w-full max-w-[430px] shadow-lg text-center">
-        <div className="relative bg-[#ffffff] shadow-sm">
+        <div className="relative bg-[#ffffff] shadow-sm font-suit">
           <div className="relative h-[600px] w-full text-white">
             <h1 className="text-4xl font-sometimesTimes whitespace-normal w-full break-all absolute top-32 z-10">
               <p>HYEONGYU & HEEJIN</p>
@@ -39,13 +42,13 @@ export default function Home() {
               }}
             />
           </div>
-          <div className="flex justify-center items-center py-8 font-suit">
+          <div className="flex justify-center items-center py-8">
             <p className="text-xl tracking-[5px]">안현규</p>
             <div className="mx-8 border border-1 h-6"></div>
             <p className="text-xl tracking-[5px]">홍희진</p>
           </div>
           <div className="pb-12">
-            <p>2025.05.25 SUN 11:00AM</p>
+            <p>2025.05.25 SUN 12:00AM</p>
             <p>헤이스가든</p>
           </div>
           <div style={{ position: 'absolute', top: 16, left: 16, width: 'calc(100% - 32px)', height: 'calc(100% - 32px)', border: '2px solid #EFEFEF' }}></div>
@@ -60,7 +63,7 @@ export default function Home() {
               height={64}
             />
           </div>
-          <div className="tracking-[0.2em] leading-[2em] font-suit font-thin">
+          <div className="tracking-[0.2em] leading-[2em] font-suit font-extralight">
             <p>함께 다니는 캠핑이 즐거워</p>
             <p>결혼하고 싶어진 현규,</p>
             <br/>
@@ -73,25 +76,25 @@ export default function Home() {
             <p>부디 귀한 걸음 하시어</p>
             <p>새로운 시작을 함께해 주세요!</p>
           </div>
-          <div className="mt-12 leading-[2em]">
+          <div className="mt-16 leading-[2em]">
             <div>
               <span>안홍기</span>
               <span> · </span>
               <span>이귀분</span>
-              <span>의 아들</span>
+              <span className="text-sm font-extralight mx-1">의 아들</span>
               <span>현규</span>
             </div>
             <div>
               <span>홍인덕</span>
               <span> · </span>
               <span>이현자</span>
-              <span>의 딸</span>
+              <span className="text-sm font-extralight mx-1">의 딸</span>
               <span>희진</span>
             </div>
           </div>
         </SectionView>
 
-        <SectionView>
+        <SectionView title="CASTING" subTitle="등장인물">
           <div className="w-full h-full">
             <img
               className="w-full h-auto"
@@ -106,11 +109,7 @@ export default function Home() {
           <Calendar />
         </div>
 
-        <SectionView>
-          <div>
-            <p className="tracking-[0.3em] text-xs font-sometimesTimes">LOCATION</p>
-            <p className="tracking-[0.3em] pt-2">오시는 길</p>
-          </div>
+        <SectionView title="LOCATION" subTitle="오시는 길">
           <div className="pt-8">
             <p className="tracking-[0.3em]">헤이스가든</p>
             <p className="tracking-[0.1em] pt-2 text-[#4E4C4B] text-sm">서울 서초구 신흥안길 40-15</p>
@@ -126,31 +125,66 @@ export default function Home() {
             </div>
           </div>
 
-          <div>
-            <p>주차 안내</p>
+          <div className="p-8 font-suit text-left flex flex-col gap-y-4">
             <div>
-              안녕
+              <div className="flex items-center py-2">
+                <span className="mr-2">
+                  <CarSvg />
+                </span>
+                <span className="text-[#AFC18B]">자차</span>
+              </div>
+              <div className="py-4">
+                <span className="font-extralight text-sm">
+                  <p>네비게이션 : &apos;헤이스가든&apos; 검색</p>
+                  <p>서울 서초구 신흥안길 40-15</p>
+                </span>
+              </div>
+              <div className="w-full my-2 h-[1px] border"></div>
+            </div>
+            <div>
+              <div className="flex items-center py-2">
+                <span className="mr-2">
+                  <BusSvg />
+                </span>
+                <span className="text-[#AFC18B]">버스</span>
+              </div>
+              <div className="py-4">
+                <span className="font-extralight text-sm">
+                  <p>[양재역]</p>
+                  <p>지하철(신분당선) 하차 후 9번 출구 버스 환승</p>
+                  <p>[양재시민의숲역]</p>
+                  <p>지하철(신분당선) 하차 후 4번 출구 버스 환승</p>
+                </span>
+              </div>
+            </div>
+            <div>
+              <div className="flex items-center py-2">
+                <span className="mr-2">
+                  <SubwaySvg />
+                </span>
+                <span className="text-[#AFC18B]">지하철</span>
+              </div>
+              <div className="py-4">
+                <span className="font-extralight text-sm">
+                  <p>3호선(양재역)</p>
+                  <p>지하철(신분당선) 하차 후 9번 출구 버스 환승</p>
+                  <p>신분당선(양재시민의숲역)</p>
+                  <p>지하철(신분당선) 하차 후 4번 출구 버스 환승</p>
+                </span>
+              </div>
             </div>
           </div>
         </SectionView>
           
-        <SectionView>
-          <div>
-            <p className="tracking-[0.3em] text-xs font-sometimesTimes">GALLERY</p>
-            <p className="tracking-[0.3em] pt-2">갤러리</p>
-            <Gallery />
-          </div>
+        <SectionView title="GALLERY" subTitle="갤러리">
+          <Gallery />
         </SectionView>
 
-        <SectionView>
-          <div>
-            <p className="tracking-[0.3em] pt-2">마음 전하실 곳</p>
-            <div className="mt-8">
-              <Accordion title="신랑측" />
-              <Accordion title="신부측" />
-            </div>
+        <SectionView subTitle="마음 전하실 곳">
+          <div className="mt-8">
+            <Accordion title="신랑측" />
+            <Accordion title="신부측" />
           </div>
-          
         </SectionView>
 
         <SectionView>
