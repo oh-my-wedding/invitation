@@ -47,8 +47,8 @@ export default function Home() {
             <div className="mx-8 border border-1 h-6"></div>
             <p className="text-xl tracking-[5px]">홍희진</p>
           </div>
-          <div className="pb-12">
-            <p>2025.05.25 SUN 12:00AM</p>
+          <div className="pb-12 font-light">
+            <p>2025년 5월 25일 일요일 오후 12시</p>
             <p>헤이스가든</p>
           </div>
           <div style={{ position: 'absolute', top: 16, left: 16, width: 'calc(100% - 32px)', height: 'calc(100% - 32px)', border: '2px solid #EFEFEF' }}></div>
