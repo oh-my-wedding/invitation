@@ -37,7 +37,7 @@ export default function Home() {
                 bottom: 0,
                 left: 0,
                 width: '100%',
-                height: '15%',
+                height: '5%',
                 background: 'linear-gradient(rgba(255, 255, 255, 0) 0%, rgb(255, 255, 255) 90%)',
               }}
             />
