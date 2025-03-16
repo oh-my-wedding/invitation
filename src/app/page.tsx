@@ -91,6 +91,16 @@ export default function Home() {
           </div>
         </SectionView>
 
+        <SectionView>
+          <div className="w-full h-full">
+            <img
+              className="w-full h-auto"
+              src="/invitation/images/family.jpg"
+              alt="Main Image"
+            />
+          </div>
+        </SectionView>
+
         <div className="bg-white shadow-sm py-16">
           <p className="tracking-[0.3em] text-sm font-sometimesTimes">THE WEDDING DAY</p>
           <Calendar />
