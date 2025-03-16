@@ -64,7 +64,7 @@ export const Calendar = () => {
       </div>
 
       <div className="mt-8 text-xs tracking-[0.2em]">
-        우리의 예식까지 남은 시간, <b>{differenceInDays(targetDate, new Date())}일</b>
+        현규 ❤️ 희진의 예식이<span className="mx-1 text-[#8c9a6f]">{differenceInDays(targetDate, new Date())}일</span>남았습니다.
       </div>
     </div>
   );
