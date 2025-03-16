@@ -156,6 +156,7 @@ export default function Home() {
                   <p>지하철(신분당선) 하차 후 4번 출구 버스 환승</p>
                 </span>
               </div>
+              <div className="w-full my-2 h-[1px] border"></div>
             </div>
             <div>
               <div className="flex items-center py-2">
