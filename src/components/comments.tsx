@@ -1,4 +1,9 @@
+'use client';
+
+import { useState } from "react";
 import { format } from "date-fns";
+
+import { WriteCommentModal } from "@/components/write-comment-modal";
 
 const data = [
   {
@@ -20,6 +25,7 @@ const data = [
 ]
 
 export const Comments = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <>
       <div className="px-8">
@@ -51,10 +57,18 @@ export const Comments = () => {
         ))}
       </div>
       <div className="px-8 w-full gsap-opacity">
-        <button className="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text- px-4 py-2 mt-8 w-full rounded-lg h-12 bg-[#afc18b]">
+        <button
+          className="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-white px-4 py-2 mt-8 w-full rounded-lg h-12 bg-[#afc18b]"
+          onClick={() => setIsModalOpen(true)}
+        >
           메세지 남기기
         </button>
       </div>
+      <WriteCommentModal
+        isShow={isModalOpen}
+        onSubmit={data => console.log(data)}
+        onClose={() => setIsModalOpen(false)}
+      />
     </>
   );
 };
