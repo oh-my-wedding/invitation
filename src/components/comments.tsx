@@ -1,31 +1,26 @@
 'use client';
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { format } from "date-fns";
 
-import { WriteCommentModal } from "@/components/write-comment-modal";
-
-const data = [
-  {
-    id: '1',
-    writer: '현규',
-    message: `결혼을 진심으로 축하드립니다~
-아아`,
-    createdAt: new Date(),
-  },
-  {
-    id: '2',
-    writer: '희진',
-    message: `결혼축하한다
-아아
-오
-오`,
-    createdAt: new Date(),
-  },
-]
+import { WriteCommentData, WriteCommentModal } from "@/components/write-comment-modal";
+import { getGuestBook, GuestBookRow, writeGuestBook } from "@/utils/api";
 
 export const Comments = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const [data, setData] = useState<GuestBookRow[]>([]);
+
+  useEffect(() => {
+    getGuestBook().then(setData);
+  }, []);
+
+  const handleSubmit = async (data: WriteCommentData) => {
+    await writeGuestBook({ writer: data.name, password: data.password, message: data.message });
+
+    setIsModalOpen(false);
+  };
+
   return (
     <>
       <div className="px-8">
@@ -49,7 +44,7 @@ export const Comments = () => {
                   <span className="font-light text-sm">{item.writer}</span>
                 </div>
                 <div className="max-w-[50%]">
-                  <p className="font-extralight text-sm">{format(item.createdAt, 'yyyy.MM.dd hh:mm')}</p>
+                  <p className="font-extralight text-sm">{format(item.created_at, 'yyyy.MM.dd hh:mm')}</p>
                 </div>
               </div>
             </div>
@@ -66,7 +61,7 @@ export const Comments = () => {
       </div>
       <WriteCommentModal
         isShow={isModalOpen}
-        onSubmit={data => console.log(data)}
+        onSubmit={handleSubmit}
         onClose={() => setIsModalOpen(false)}
       />
     </>

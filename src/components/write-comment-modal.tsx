@@ -3,7 +3,7 @@
 import { ChangeEvent, FormEvent, useState } from "react";
 import classNames from "classnames";
 
-type CommentData = {
+export type WriteCommentData = {
   name: string;
   password: string;
   message: string;
@@ -11,12 +11,12 @@ type CommentData = {
 
 interface WriteCommentModalProps {
   isShow: boolean;
-  onSubmit: (data: CommentData) => void;
+  onSubmit: (data: WriteCommentData) => void;
   onClose: () => void;
 }
 
 export const WriteCommentModal = ({ isShow, onSubmit, onClose }: WriteCommentModalProps) => {
-  const [data, setData] = useState<CommentData>({
+  const [data, setData] = useState<WriteCommentData>({
     name: '',
     password: '',
     message: '',
@@ -74,7 +74,7 @@ export const WriteCommentModal = ({ isShow, onSubmit, onClose }: WriteCommentMod
                 <div className="col-span-2">
                   <label htmlFor="password" className="block mb-2 text-sm font-medium text-gray-900">비밀번호</label>
                   <input
-                    type="text"
+                    type="password"
                     id="password"
                     className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
                     placeholder="비밀번호를 입력해주세요"
