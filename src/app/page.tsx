@@ -17,6 +17,7 @@ export default function Home() {
   return (
     <div className="bg-[#f8f8f8] relative flex flex-col justify-center items-center">
       <div className="bg-[#fcfaf8] relative h-full w-full max-w-[430px] shadow-lg text-center">
+
         <div className="relative bg-[#ffffff] shadow-sm font-suit">
           <div className="relative h-[600px] w-full text-white">
             <h1 className="text-4xl font-sometimesTimes whitespace-normal w-full break-all absolute top-32 z-10">
@@ -188,7 +189,11 @@ export default function Home() {
           </div>
         </SectionView>
 
-        <SectionView>
+        <SectionView
+          title="MESSAGE"
+          subTitle="따뜻한 방명록을 남겨주세요"
+          className="bg-[#eff3e8]"
+        >
           <Comments /> 
         </SectionView>
       </div>
