@@ -8,13 +8,14 @@ const supabase = createClient(
 export type GuestBookRow = {
   id: number;
   writer: string;
-  password: string;
   message: string;
   created_at: Date;
 }
 
 export async function getGuestBook() {
-  const { data } = await supabase.from("guest-book").select<"*", GuestBookRow>();
+  const { data } = await supabase.from("guest_book_view")
+    .select<"*", GuestBookRow>()
+    .order('created_at', { ascending: false });
   return data || [];
 }
 
@@ -25,5 +26,5 @@ type WriteGuestBook = {
 };
 
 export async function writeGuestBook(data: WriteGuestBook) {
-  await supabase.from("guest-book").insert([data]).select();
+  await supabase.from("guest_book").insert([data]).select();
 }
