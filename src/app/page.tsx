@@ -19,18 +19,17 @@ export default function Home() {
       <div className="bg-[#fcfaf8] relative h-full w-full max-w-[430px] shadow-lg text-center">
 
         <div className="relative bg-[#ffffff] shadow-sm font-suit">
-          <div className="relative h-[600px] w-full text-white">
+          <div className="relative w-full text-white">
             <h1 className="text-4xl font-sometimesTimes whitespace-normal w-full break-all absolute top-32 z-10">
               <p>HYEONGYU & HEEJIN</p>
             </h1>
-            <Image
-              src="/invitation/images/banner.jpg"
+            <img
+              src="https://d2vg9xq4wqsh4f.cloudfront.net/banner.jpg"
               alt="Main Image"
+              className="w-full h-auto"
               style={{
                 objectFit: 'cover',
               }}
-              fill
-              priority
             />
             <div
               style={{
@@ -38,7 +37,7 @@ export default function Home() {
                 bottom: 0,
                 left: 0,
                 width: '100%',
-                height: '5%',
+                height: 40,
                 background: 'linear-gradient(rgba(255, 255, 255, 0) 0%, rgb(255, 255, 255) 90%)',
               }}
             />
@@ -95,11 +94,11 @@ export default function Home() {
           </div>
         </SectionView>
 
-        <SectionView title="CASTING" subTitle="등장인물">
+        <SectionView title="CASTING" subTitle="등장인물" className="pb-0">
           <div className="w-full h-full">
             <img
               className="w-full h-auto"
-              src="/invitation/images/family.jpg"
+              src="https://d2vg9xq4wqsh4f.cloudfront.net/casting.jpg"
               alt="Main Image"
             />
           </div>
