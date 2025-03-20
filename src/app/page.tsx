@@ -131,46 +131,48 @@ export default function Home() {
                 <span className="mr-2">
                   <CarSvg />
                 </span>
-                <span className="text-[#AFC18B]">자차</span>
+                <span className="text-[#AFC18B]">자차 이용 시</span>
               </div>
               <div className="py-4">
                 <span className="font-extralight text-sm">
-                  <p>네비게이션 : &apos;헤이스가든&apos; 검색</p>
-                  <p>서울 서초구 신흥안길 40-15</p>
+                  <p>○ 네비게이션 : &apos;헤이스가든&apos; 검색</p>
+                  <p>○ 주차: (주차장 이용 안내)</p>
                 </span>
               </div>
-              <div className="w-full my-2 h-[1px] border"></div>
             </div>
-            <div>
-              <div className="flex items-center py-2">
-                <span className="mr-2">
-                  <BusSvg />
-                </span>
-                <span className="text-[#AFC18B]">버스</span>
-              </div>
-              <div className="py-4">
-                <span className="font-extralight text-sm">
-                  <p>[양재역]</p>
-                  <p>지하철(신분당선) 하차 후 9번 출구 버스 환승</p>
-                  <p>[양재시민의숲역]</p>
-                  <p>지하철(신분당선) 하차 후 4번 출구 버스 환승</p>
-                </span>
-              </div>
-              <div className="w-full my-2 h-[1px] border"></div>
-            </div>
+            <div className="w-full my-2 h-[1px] border"></div>
             <div>
               <div className="flex items-center py-2">
                 <span className="mr-2">
                   <SubwaySvg />
                 </span>
-                <span className="text-[#AFC18B]">지하철</span>
+                <span className="text-[#AFC18B]">대중교통 이용 시</span>
+              </div>
+              <div className="py-4">
+                <span className="font-extralight text-sm flex flex-col gap-4">
+                  <div>
+                    <p>○ 3호선(양재역)</p>
+                    <p>지하철(3호선) 하차 후 9번 출구 버스 환승</p>
+                  </div>
+                  <div>
+                    <p>○ 신분당선(양재시민의숲역)</p>
+                    <p>지하철(신분당선) 하차 후 4번 출구 버스 환승</p>
+                  </div>
+                </span>
+              </div>
+            </div>
+            <div className="w-full my-2 h-[1px] border"></div>
+            <div>
+              <div className="flex items-center py-2">
+                <span className="mr-2">
+                  <BusSvg />
+                </span>
+                <span className="text-[#AFC18B]">셔틀버스 이용 시</span>
               </div>
               <div className="py-4">
                 <span className="font-extralight text-sm">
-                  <p>3호선(양재역)</p>
-                  <p>지하철(신분당선) 하차 후 9번 출구 버스 환승</p>
-                  <p>신분당선(양재시민의숲역)</p>
-                  <p>지하철(신분당선) 하차 후 4번 출구 버스 환승</p>
+                  <p>○ 운행 시간: 10:30 - 14:30, 10분 간격으로 운영</p>
+                  <p>○ 승차 위치: 양재시민의숲역 4번 출구</p>
                 </span>
               </div>
             </div>
