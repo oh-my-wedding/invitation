@@ -5,8 +5,8 @@ import Avatar from "react-nice-avatar";
 import { format } from "date-fns";
 import { X } from 'lucide-react';
 
-import { WriteCommentData, WriteCommentModal } from "@/components/write-comment-modal";
-import { getGuestBook, GuestBookRow, writeGuestBook } from "@/utils/api";
+import { WriteCommentModal } from "@/components/write-comment-modal";
+import { getGuestBook, GuestBookRow } from "@/utils/api";
 
 export const Comments = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -16,17 +16,6 @@ export const Comments = () => {
   useEffect(() => {
     getGuestBook().then(setData);
   }, []);
-
-  const handleSubmit = async (data: WriteCommentData) => {
-    await writeGuestBook({
-      writer: data.name,
-      password: data.password,
-      message: data.message,
-      avatar_config: data.avatarConfig,
-    });
-
-    setIsModalOpen(false);
-  };
 
   return (
     <>
@@ -70,7 +59,6 @@ export const Comments = () => {
       </div>
       <WriteCommentModal
         isShow={isModalOpen}
-        onSubmit={handleSubmit}
         onClose={() => setIsModalOpen(false)}
       />
     </>

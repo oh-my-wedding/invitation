@@ -51,9 +51,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=bcb9c3eac6aa813db022f267e80b43cd&autoload=false" async></script>
+      {process.env.NODE_ENV === 'production' && (
+        <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=bcb9c3eac6aa813db022f267e80b43cd&autoload=false" async></script>
+      )}
       <body className={`${suit.variable} ${sometimesTimes.variable}`}>
         {children}
+        <div id="portal"></div>
       </body>
     </html>
   );
