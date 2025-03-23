@@ -94,7 +94,7 @@ export default function Home() {
           </div>
         </SectionView>
 
-        <SectionView title="CASTING" subTitle="등장인물" className="pb-0">
+        <SectionView title="CASTING" subTitle="등장인물" className="pb-0 bg-white shadow-sm">
           <div className="w-full h-full">
             <img
               className="w-full h-auto"

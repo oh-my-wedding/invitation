@@ -16,11 +16,11 @@ export const Accordion = ({ title, children }: AccordionProps) => {
       <h2 id="accordion-collapse-heading-1">
         <button
           type="button"
-          className={classNames("flex items-center justify-between w-full p-4 font-medium rtl:text-right bg-[#e6ece1] border border-gray-200", {
+          className={classNames("flex items-center justify-between w-full p-4 font-normal bg-white shadow", {
             'rounded-xl': !open,
             'rounded-t-xl': open,
-            'border': !open,
-            'border-b-0': open,
+            'border-b-[1px]': open,
+            'border-gray-200': open,
           })}
           data-accordion-target="#accordion-collapse-body-1"
           aria-expanded="true"
@@ -44,7 +44,7 @@ export const Accordion = ({ title, children }: AccordionProps) => {
       </h2>
       <div
         id="accordion-collapse-body-1"
-        className={classNames('rounded-b-xl border border-[#e6ece1]-1 overflow-hidden', {
+        className={classNames('rounded-b-xl overflow-hidden shadow', {
           hidden: !open,
         })}
       >
