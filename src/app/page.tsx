@@ -210,7 +210,7 @@ export default function Home() {
                 <BankAccountNumber
                   role="아버지"
                   name="안홍기"
-                  bankName="NH농협은행"
+                  bankName="농협은행"
                   bankNumber="001-02-117514"
                 />
               </div>
@@ -221,13 +221,19 @@ export default function Home() {
                   role="신부"
                   name="홍희진"
                   bankName="카카오뱅크"
-                  bankNumber="3333-08-0458372"
+                  bankNumber="3333-01-1467864"
                 />
                 <BankAccountNumber
                   role="아버지"
                   name="홍인덕"
-                  bankName="카카오뱅크"
-                  bankNumber="3333-08-0458372"
+                  bankName="농협은행"
+                  bankNumber="312-0216-2268-01"
+                />
+                <BankAccountNumber
+                  role="어머니"
+                  name="이현자"
+                  bankName="신협은행"
+                  bankNumber="132-13-0662117"
                 />
               </div>
             </Accordion>
