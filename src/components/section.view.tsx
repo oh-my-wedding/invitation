@@ -10,7 +10,7 @@ interface SectionViewProps {
 export const SectionView = ({ children, title, subTitle, className }: SectionViewProps) => {
   return (
     <div className={classNames('py-16', className)}>
-      {title || subTitle && (
+      {(!!title || !!subTitle) && (
         <div className="mb-8 tracking-[0.3em]">
           {title && <p className="text-xs font-sometimesTimes">{title}</p>}
           {subTitle && <p className="pt-2">{subTitle}</p>}
