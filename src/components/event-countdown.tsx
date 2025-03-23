@@ -68,7 +68,7 @@ const EventCountdown = ({ value }: FlipProps) => {
           <span data-view="flip"></span>
         </div>
       </div>
-      <div>:</div>
+      <div className="mb-[6px]">:</div>
       <div className="m-1">
         <div className="text-[10px]">HOUR</div>
         <div
@@ -80,7 +80,7 @@ const EventCountdown = ({ value }: FlipProps) => {
           <span data-view="flip"></span>
         </div>
       </div>
-      <div>:</div>
+      <div className="mb-[6px]">:</div>
       <div className="m-1">
         <div className="text-[10px]">MIN</div>
         <div
@@ -92,7 +92,7 @@ const EventCountdown = ({ value }: FlipProps) => {
           <span data-view="flip"></span>
         </div>
       </div>
-      <div>:</div>
+      <div className="mb-[6px]">:</div>
       <div className="m-1">
         <div className="text-[10px]">SEC</div>
         <div
