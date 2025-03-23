@@ -4,6 +4,8 @@ import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
 
 import 'swiper/css';
 
+import './gallery.css';
+
 const IMAGES = [
   '/invitation/images/gallery-1.jpg',
   '/invitation/images/gallery-2.jpg',
@@ -17,21 +19,19 @@ export const Gallery = () => {
   return (
     <div className="relative my-12">
       <Swiper
-        slidesPerView={1}
+        slidesPerView="auto"
+        spaceBetween={4}
         speed={800}
         loop
+        centeredSlides
       >
         {IMAGES.map((imageUrl, index) => (
           <SwiperSlide key={index}>
-            <div className="relative flex">
+            <div>
               <img
                 src={imageUrl}
                 alt="Gallery Image"
-                style={{
-                  width: '100%',
-                  height: 650,
-                  objectFit: 'contain'
-                }}
+                className="w-full h-auto object-contain rounded-md"
               />
             </div>
           </SwiperSlide>
