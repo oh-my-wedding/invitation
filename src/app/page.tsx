@@ -57,7 +57,7 @@ export default function Home() {
         </div>
         
         <SectionView>
-          <div className="flex justify-center">
+          <div className="flex justify-center mb-4">
             <Image
               src="/invitation/images/duckboon-char.png"
               alt="Main Image"
