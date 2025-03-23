@@ -1,6 +1,8 @@
 'use client';
 
-import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
+import { useEffect, useState } from 'react';
+import { Swiper, SwiperClass, SwiperSlide, useSwiper } from 'swiper/react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 import 'swiper/css';
 
@@ -36,7 +38,7 @@ export const Gallery = () => {
             </div>
           </SwiperSlide>
         ))}
-      <SlideActions />
+        <SlideActions />
       </Swiper>
     </div>
   );
@@ -44,26 +46,27 @@ export const Gallery = () => {
 
 const SlideActions = () => {
   const swiper = useSwiper();
+  const [activePage, setActivePage] = useState(0);
+
+  useEffect(() => {
+    const handleSlideChange = (swiper: SwiperClass) => {
+      setActivePage(swiper.realIndex + 1);
+    };
+    swiper.on('slideChange', handleSlideChange);
+    return () => {
+      swiper.off('slideChange', handleSlideChange);
+    }
+  }, [swiper]);
+
   return (
-    <>
-      <div
-        className="absolute w-[30px] h-[30px] flex items-center justify-center rounded-full"
-        style={{ top: 'calc(50% - 15px)', left: 8, background: 'rgba(0, 0, 0, 0.4)', zIndex: 10 }}
-        onClick={() => swiper.slidePrev()}
-      >
-        <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 512 512" color="#fff" height="17" width="17" xmlns="http://www.w3.org/2000/svg">
-          <path d="M217.9 256L345 129c9.4-9.4 9.4-24.6 0-33.9-9.4-9.4-24.6-9.3-34 0L167 239c-9.1 9.1-9.3 23.7-.7 33.1L310.9 417c4.7 4.7 10.9 7 17 7s12.3-2.3 17-7c9.4-9.4 9.4-24.6 0-33.9L217.9 256z"></path>
-        </svg>
-      </div>
-      <div
-        className="absolute w-[30px] h-[30px] flex items-center justify-center rounded-full"
-        style={{ top: 'calc(50% - 15px)', right: 8, background: 'rgba(0, 0, 0, 0.4)', zIndex: 10 }}
-        onClick={() => swiper.slideNext()}
-      >
-        <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 512 512" color="#fff" height="17" width="17" xmlns="http://www.w3.org/2000/svg">
-          <path d="M294.1 256L167 129c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.3 34 0L345 239c9.1 9.1 9.3 23.7.7 33.1L201.1 417c-4.7 4.7-10.9 7-17 7s-12.3-2.3-17-7c-9.4-9.4-9.4-24.6 0-33.9l127-127.1z"></path>
-        </svg>
-      </div>
-    </>
+    <div className="mt-6 flex items-center justify-between">
+      <button className="px-4" onClick={() => swiper.slidePrev()}>
+        <ChevronLeft size={30} className="text-gray-400" />
+      </button>
+      <div className="text-sm text-black font-suit">{activePage} / {IMAGES.length}</div>
+      <button className="px-4" onClick={() => swiper.slideNext()}>
+        <ChevronRight size={30} className="text-gray-400" />
+      </button>
+    </div>
   );
 };
