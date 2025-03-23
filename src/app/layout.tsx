@@ -4,6 +4,7 @@ import "./globals.css";
 
 import "react-simple-toasts/dist/style.css";
 import "react-simple-toasts/dist/theme/light.css";
+import { CDN_URL } from "@/constants/url";
 
 
 const suit = localFont({
@@ -42,6 +43,9 @@ const sometimesTimes = localFont({
 export const metadata: Metadata = {
   title: "현규 ❤️ 희진 결혼합니다.",
   description: "5월 25일 일요일  오후 12시",
+  openGraph: {
+    images: [CDN_URL + '/og-image.jpg'],
+  },
 };
 
 export default function RootLayout({
