@@ -1,4 +1,5 @@
 import { createClient } from "@supabase/supabase-js";
+import { AvatarFullConfig } from "react-nice-avatar";
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL as string,
@@ -9,6 +10,7 @@ export type GuestBookRow = {
   id: number;
   writer: string;
   message: string;
+  avatar_config: AvatarFullConfig | null;
   created_at: Date;
 }
 
@@ -23,6 +25,7 @@ type WriteGuestBook = {
   writer: string;
   password: string;
   message: string;
+  avatar_config: AvatarFullConfig | null;
 };
 
 export async function writeGuestBook(data: WriteGuestBook) {

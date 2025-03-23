@@ -2,11 +2,18 @@
 
 import { ChangeEvent, FormEvent, useState } from "react";
 import classNames from "classnames";
+import dynamic from "next/dynamic";
+import { AvatarFullConfig } from "react-nice-avatar";
+
+const RandomAvatar = dynamic(() => import('@/components/random-avatar'),
+{ ssr: false }
+);
 
 export type WriteCommentData = {
   name: string;
   password: string;
   message: string;
+  avatarConfig: AvatarFullConfig | null; 
 };
 
 interface WriteCommentModalProps {
@@ -20,12 +27,20 @@ export const WriteCommentModal = ({ isShow, onSubmit, onClose }: WriteCommentMod
     name: '',
     password: '',
     message: '',
+    avatarConfig: null,
   });
 
   const handleChangeInput = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setData(prev => ({
       ...prev,
       [event.target.id]: event.target.value,
+    }));
+  };
+
+  const handleChangeAvatar = (config: AvatarFullConfig) => {
+    setData(prev => ({
+      ...prev,
+      avatarConfig: config,
     }));
   };
 
@@ -58,6 +73,9 @@ export const WriteCommentModal = ({ isShow, onSubmit, onClose }: WriteCommentMod
             </div>
             {/* <!-- Modal body --> */}
             <form className="p-4 md:p-5 text-left" onSubmit={handleSubmit}>
+              <div className="mb-4">
+                <RandomAvatar onChange={handleChangeAvatar} />
+              </div>
               <div className="grid gap-4 mb-4 grid-cols-2">
                 <div className="col-span-2">
                   <label htmlFor="name" className="block mb-2 text-sm font-medium text-gray-900">작성자 성함</label>

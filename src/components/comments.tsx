@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from "react";
+import Avatar from "react-nice-avatar";
 import { format } from "date-fns";
 
 import { WriteCommentData, WriteCommentModal } from "@/components/write-comment-modal";
@@ -16,7 +17,12 @@ export const Comments = () => {
   }, []);
 
   const handleSubmit = async (data: WriteCommentData) => {
-    await writeGuestBook({ writer: data.name, password: data.password, message: data.message });
+    await writeGuestBook({
+      writer: data.name,
+      password: data.password,
+      message: data.message,
+      avatar_config: data.avatarConfig,
+    });
 
     setIsModalOpen(false);
   };
@@ -39,8 +45,13 @@ export const Comments = () => {
                 </p>
               </div>
               <div className="flex items-end justify-between mt-3 text-[0.875em]">
-                <div className="max-w-[50%]">
-                  <span className="text-[#8c9a6f] text-sm">From </span>
+                <div className="flex max-w-[50%]">
+                  <span className="text-[#8c9a6f] text-sm mr-1">From</span>
+                  {item.avatar_config !== null && (
+                    <div className="mr-1">
+                      <Avatar style={{ width: 20, height: 20 }} {...item.avatar_config} />
+                    </div>
+                  )}
                   <span className="font-light text-sm">{item.writer}</span>
                 </div>
                 <div className="max-w-[50%]">
