@@ -42,9 +42,9 @@ const sometimesTimes = localFont({
 
 export const metadata: Metadata = {
   title: "현규 ❤️ 희진 결혼합니다.",
-  description: "5월 25일 일요일  오후 12시",
+  description: "5월 25일(일) 오후 12시 | 헤이스가든",
   openGraph: {
-    images: [CDN_URL + '/og-image.jpg'],
+    images: [CDN_URL + '/thumbnail.jpg'],
   },
 };
 
