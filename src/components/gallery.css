@@ -2,4 +2,13 @@
   width: 80%;
 
   margin: auto 0;
+
+  opacity: 1;
+  transition: opacity 0.8s;
+}
+.swiper-slide + .swiper-slide-prev {
+  opacity: 0.2;
+}
+.swiper-slide + .swiper-slide-next {
+  opacity: 0.2;
 }
