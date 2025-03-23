@@ -195,8 +195,8 @@ export default function Home() {
                 <BankAccountNumber
                   role="아버지"
                   name="안홍기"
-                  bankName="카카오뱅크"
-                  bankNumber="3333-08-0458372"
+                  bankName="NH농협은행"
+                  bankNumber="001-02-117514"
                 />
               </div>
             </Accordion>
