@@ -151,12 +151,26 @@ export default function Home() {
               <div className="py-4">
                 <span className="font-extralight text-sm flex flex-col gap-4">
                   <div>
-                    <p>○ 3호선(양재역)</p>
-                    <p>지하철(3호선) 하차 후 9번 출구 버스 환승</p>
+                    <p className="text-[#fc4c02]">○ 양재역</p>
+                    <div className="mb-1">
+                      <p>지하철(3호선) 하차 후 9번 출구 버스 환승</p>
+                      <p>{">"} 버스: 9404번, 9408번, 9409번</p>
+                    </div>
+                    <div className="mb-1">
+                      <p>지하철(신분당선) 하차 후 11번 출구 버스 환승</p>
+                      <p>{">"} 버스: 440번, 452번, 741번</p>
+                    </div>
                   </div>
                   <div>
-                    <p>○ 신분당선(양재시민의숲역)</p>
-                    <p>지하철(신분당선) 하차 후 4번 출구 버스 환승</p>
+                    <p className="text-[#D31145]">○ 양재시민의숲역</p>
+                    <div className="mb-1">
+                      <p>지하철(신분당선) 하차 후 4번 출구 버스 환승</p>
+                      <p>{">"} 버스: 440번, 452번, 741번</p>
+                    </div>
+                    <div className="mb-1">
+                      <p>지하철(신분당선) 하차 후 1번 출구 버스 환승</p>
+                      <p>{">"} 버스: 9404번, 9408번, 9800번</p>
+                    </div>
                   </div>
                 </span>
               </div>
