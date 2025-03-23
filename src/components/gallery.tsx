@@ -3,19 +3,13 @@
 import { useEffect, useState } from 'react';
 import { Swiper, SwiperClass, SwiperSlide, useSwiper } from 'swiper/react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { CDN_URL } from '@/constants/url';
 
 import 'swiper/css';
 
 import './gallery.css';
 
-const IMAGES = [
-  '/invitation/images/gallery-1.jpg',
-  '/invitation/images/gallery-2.jpg',
-  '/invitation/images/gallery-3.jpg',
-  '/invitation/images/gallery-4.jpg',
-  '/invitation/images/gallery-5.jpg',
-  '/invitation/images/gallery-6.jpg',
-];
+const IMAGES = new Array(13).fill('');
 
 export const Gallery = () => {
   return (
@@ -27,11 +21,11 @@ export const Gallery = () => {
         loop
         centeredSlides
       >
-        {IMAGES.map((imageUrl, index) => (
+        {IMAGES.map((_, index) => (
           <SwiperSlide key={index}>
             <div>
               <img
-                src={imageUrl}
+                src={`${CDN_URL}/gallery/photo_${index + 1}.jpg`}
                 alt="Gallery Image"
                 className="w-full h-auto object-contain rounded-md"
               />

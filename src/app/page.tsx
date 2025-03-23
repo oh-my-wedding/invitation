@@ -13,6 +13,7 @@ import { CarSvg } from "@/svg/car-svg";
 import { BusSvg } from "@/svg/bus-svg";
 import { SubwaySvg } from "@/svg/subway.svg";
 import { BankAccountNumber } from "@/components/bank-account-number";
+import { CDN_URL } from "@/constants/url";
 
 export default function Home() {
   return (
@@ -25,7 +26,7 @@ export default function Home() {
               <p>HYEONGYU & HEEJIN</p>
             </h1>
             <img
-              src="https://d2vg9xq4wqsh4f.cloudfront.net/banner.jpg"
+              src={CDN_URL + '/banner.jpg'}
               alt="Main Image"
               className="w-full h-auto"
               style={{
@@ -97,7 +98,7 @@ export default function Home() {
           <div className="w-full h-full">
             <img
               className="w-full h-auto"
-              src="https://d2vg9xq4wqsh4f.cloudfront.net/casting.jpg"
+              src={`${CDN_URL}/casting.jpg`}
               alt="Main Image"
             />
           </div>
