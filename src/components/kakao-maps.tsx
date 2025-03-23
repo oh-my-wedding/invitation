@@ -23,6 +23,9 @@ export const KakaoMaps = () => {
         position: targetPosition,
       });
 
+      const control = new (window as any).kakao.maps.ZoomControl();
+      map.addControl(control, (window as any).kakao.maps.ControlPosition.TOPRIGHT); 
+
       marker.setMap(map);
     });
   }, []);
