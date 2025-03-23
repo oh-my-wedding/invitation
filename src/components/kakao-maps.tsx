@@ -1,38 +1,71 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useCallback, useEffect, useState } from "react";
+
+const loadScript = (src: string, callback: () => void) => {
+  const script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src = src;
+  script.onload = () => callback();
+  document.head.appendChild(script);
+};
+
+const latitude = 37.4544244;
+const longitude = 127.0760178;
+let mapInstance: naver.maps.Map | null = null;
 
 export const KakaoMaps = () => {
-  const ref = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    if (!ref.current) {
-      return;
+  const [isMapLoaded, setMapLoaded] = useState(false);
+  
+  const initMap = useCallback(() => {
+    const mapOptions = {
+      zoomControl: true,
+      zoomControlOptions: {
+        style: naver.maps.ZoomControlStyle.SMALL,
+        position: naver.maps.Position.TOP_RIGHT,
+      },
+      center: new naver.maps.LatLng(latitude, longitude),
+      zoom: 16,
+    };
+
+    if (document.getElementById('map')) {
+      mapInstance = new naver.maps.Map('map', mapOptions);
     }
-    
-    (window as any).kakao?.maps?.load(() => {
-      const targetPosition = new (window as any).kakao.maps.LatLng(37.4544244, 127.0760178);
-      const options =  {
-        center: targetPosition,
-        level: 3,
-        draggable: false,
-      };
-      const map = new (window as any).kakao.maps.Map(ref.current, options);
 
-      const marker = new (window as any).kakao.maps.Marker({
-        position: targetPosition,
-      });
+    // Marker 생성
+    const marker = new naver.maps.Marker({
+      position: new naver.maps.LatLng(latitude, longitude),
+      map: mapInstance!,
+    });
 
-      const control = new (window as any).kakao.maps.ZoomControl();
-      map.addControl(control, (window as any).kakao.maps.ControlPosition.TOPRIGHT); 
-
-      marker.setMap(map);
+    // Marker 클릭 시 지도 초기화
+    naver.maps.Event.addListener(marker, 'click', () => {
+      mapInstance?.setCenter(new naver.maps.LatLng(latitude, longitude));
+      mapInstance?.setZoom(16);
     });
   }, []);
 
+  useEffect(() => {
+    if (typeof naver === 'undefined') {
+      loadScript(
+        'https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=vvqmqdqfg5',
+        () => setMapLoaded(true),
+      );
+    } else {
+      setMapLoaded(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!isMapLoaded) {
+      return;
+    }
+    initMap();
+  }, [isMapLoaded, initMap]);
+
   return (
     <div className="pt-12">
-      <div className="h-[320px]" ref={ref}></div>
+      <div id="map" className="h-[320px]" ref={ref}></div>
     </div>
   );
 };
