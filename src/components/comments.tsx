@@ -3,13 +3,16 @@
 import { useEffect, useState } from "react";
 import Avatar from "react-nice-avatar";
 import { format } from "date-fns";
-import { X } from 'lucide-react';
+import { ChevronDown, X } from 'lucide-react';
 
 import { WriteCommentModal } from "@/components/write-comment-modal";
 import { getGuestBook, GuestBookRow } from "@/utils/api";
 
+const size = 5;
+
 export const Comments = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [page, setPage] = useState(1);
 
   const [data, setData] = useState<GuestBookRow[]>([]);
 
@@ -17,10 +20,16 @@ export const Comments = () => {
     getGuestBook().then(setData);
   }, []);
 
+  const handleClickMore = () => {
+    setPage(prev => prev + 1);
+  };
+
+  const hasMore = page * size < data.length;
+
   return (
     <>
       <div className="px-8">
-        {data.map(item => (
+        {data.slice(0, page * size).map(item => (
           <div key={item.id} className="border bg-white text-card-foreground mb-4 rounded-lg shadow-lg gsap-opacity border-none">
             <div className="p-6 py-6 relative font-suit">
               <button className="absolute top-3.5 right-3 p-2">
@@ -49,6 +58,12 @@ export const Comments = () => {
           </div>
         ))}
       </div>
+      {hasMore && (
+        <div className="flex items-center justify-center mx-8 h-8 text-gray-600" onClick={handleClickMore}>
+          <ChevronDown strokeWidth={1} />
+          <p className="ml-2">더보기</p>
+        </div>
+      )}
       <div className="px-8 w-full gsap-opacity">
         <button
           className="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-white px-4 py-2 mt-8 w-full rounded-lg h-12 bg-[#afc18b]"
