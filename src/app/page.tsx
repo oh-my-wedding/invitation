@@ -12,6 +12,7 @@ import { Accordion } from "@/components/accordion";
 import { CarSvg } from "@/svg/car-svg";
 import { BusSvg } from "@/svg/bus-svg";
 import { SubwaySvg } from "@/svg/subway.svg";
+import { BankAccountNumber } from "@/components/bank-account-number";
 
 export default function Home() {
   return (
@@ -183,8 +184,38 @@ export default function Home() {
 
         <SectionView subTitle="마음 전하실 곳">
           <div className="mt-8">
-            <Accordion title="신랑측" />
-            <Accordion title="신부측" />
+            <Accordion title="신랑측">
+              <div className="flex flex-col divide-y">
+                <BankAccountNumber
+                  role="신랑"
+                  name="안현규"
+                  bankName="카카오뱅크"
+                  bankNumber="3333-08-0458372"
+                />
+                <BankAccountNumber
+                  role="아버지"
+                  name="안홍기"
+                  bankName="카카오뱅크"
+                  bankNumber="3333-08-0458372"
+                />
+              </div>
+            </Accordion>
+            <Accordion title="신부측">
+              <div className="flex flex-col divide-y">
+                <BankAccountNumber
+                  role="신부"
+                  name="홍희진"
+                  bankName="카카오뱅크"
+                  bankNumber="3333-08-0458372"
+                />
+                <BankAccountNumber
+                  role="아버지"
+                  name="홍인덕"
+                  bankName="카카오뱅크"
+                  bankNumber="3333-08-0458372"
+                />
+              </div>
+            </Accordion>
           </div>
         </SectionView>
 
