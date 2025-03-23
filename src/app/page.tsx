@@ -63,18 +63,16 @@ export default function Home() {
               height={64}
             />
           </div>
-          <div className="tracking-[0.2em] leading-[2em] font-suit font-extralight">
-            <p>함께 다니는 캠핑이 즐거워</p>
-            <p>결혼하고 싶어진 현규,</p>
+          <div className="tracking-[0.2em] leading-[2em] font-suit font-extralight tracking-normal">
+            <p className="font-sometimesTimes tracking-widest">&quot;You make me want to be a better man.&quot;</p>
+            <p>&quot;넌 날 더 나은 사람이 되고 싶게 만들어.&quot;</p>
+            <p className="text-sm">≪이보다 더 좋을 순 없다≫ 中</p>
             <br/>
-            <p>이상형인 착하고 재밌는 사람을 만나</p>
-            <p>결혼을 결심한 희진</p>
+            <p>서로 다른 우리가 만나,</p>
+            <p>조금 더 따뜻한 세상을 함께 채워가고자 합니다.</p>
             <br/>
-            <p>저희 둘이 한 가족이 되어</p>
-            <p>기쁜 일도, 슬픈 일도 함께하려고 합니다.</p>
-            <br/>
-            <p>부디 귀한 걸음 하시어</p>
-            <p>새로운 시작을 함께해 주세요!</p>
+            <p>저희의 시작을 축복해 주신다면,</p>
+            <p>더없이 큰 기쁨이 될 것입니다.</p>
           </div>
           <div className="mt-16 leading-[2em]">
             <div>
@@ -104,10 +102,10 @@ export default function Home() {
           </div>
         </SectionView>
 
-        <div className="bg-white shadow-sm py-16">
+        <SectionView className="bg-white shadow-sm">
           <p className="tracking-[0.3em] text-sm font-sometimesTimes">THE WEDDING DAY</p>
           <Calendar />
-        </div>
+        </SectionView>
 
         <SectionView title="LOCATION" subTitle="오시는 길">
           <div className="pt-8">
