@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
+import "react-simple-toasts/dist/style.css";
+import "react-simple-toasts/dist/theme/light.css";
+
 
 const suit = localFont({
   src: [

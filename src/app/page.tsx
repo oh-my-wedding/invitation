@@ -178,7 +178,7 @@ export default function Home() {
           </div>
         </SectionView>
           
-        <SectionView title="GALLERY" subTitle="갤러리">
+        <SectionView title="GALLERY" subTitle="갤러리" className="bg-white shadow-sm">
           <Gallery />
         </SectionView>
 

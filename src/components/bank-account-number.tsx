@@ -1,4 +1,7 @@
+'use client';
+
 import { Copy } from 'lucide-react';
+import toast from 'react-simple-toasts';
 
 interface BankAccountNumber {
   role: string;
@@ -8,6 +11,12 @@ interface BankAccountNumber {
 }
 
 export const BankAccountNumber = ({ role, name, bankName, bankNumber }: BankAccountNumber) => {
+  const handleClickCopy = async () => {
+    await navigator.clipboard.writeText(`${bankName} ${bankNumber}`);
+
+    toast('✅ 계좌번호가 복사되었습니다.', { theme: 'light' });
+  };
+
   return (
     <div className="py-4">
       <div className="my-1">
@@ -20,7 +29,7 @@ export const BankAccountNumber = ({ role, name, bankName, bankNumber }: BankAcco
           <span className="font-suit">{bankNumber}</span>
         </div>
         <div>
-          <Copy size={20} />
+          <Copy size={20} onClick={handleClickCopy} />
         </div>
       </div>
     </div>
