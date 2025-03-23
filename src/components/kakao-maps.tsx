@@ -18,7 +18,7 @@ export const KakaoMaps = () => {
   const [isMapLoaded, setMapLoaded] = useState(false);
   
   const initMap = useCallback(() => {
-    const mapOptions = {
+    const mapOptions: naver.maps.MapOptions = {
       zoomControl: true,
       zoomControlOptions: {
         style: naver.maps.ZoomControlStyle.SMALL,
@@ -26,6 +26,8 @@ export const KakaoMaps = () => {
       },
       center: new naver.maps.LatLng(latitude, longitude),
       zoom: 16,
+      draggable: false,
+      scrollWheel: false,
     };
 
     if (document.getElementById('map')) {
@@ -48,7 +50,7 @@ export const KakaoMaps = () => {
   useEffect(() => {
     if (typeof naver === 'undefined') {
       loadScript(
-        'https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=vvqmqdqfg5',
+        'https://openapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=vvqmqdqfg5',
         () => setMapLoaded(true),
       );
     } else {
@@ -65,7 +67,7 @@ export const KakaoMaps = () => {
 
   return (
     <div className="pt-12">
-      <div id="map" className="h-[320px]" ref={ref}></div>
+      <div id="map" className="h-[320px]"></div>
     </div>
   );
 };
