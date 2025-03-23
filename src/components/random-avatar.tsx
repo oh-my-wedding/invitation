@@ -25,9 +25,9 @@ const RandomAvatar = ({ onChange }: RandomAvatarProps) => {
   return (
     <div className="flex gap-x-2">
       <Avatar style={{ width: 48, height: 48 }} {...config} />
-      <button className="w-[48px] h-[48px] flex items-center justify-center" onClick={handleClickShuffle}>
+      <div className="w-[48px] h-[48px] flex items-center justify-center" onClick={handleClickShuffle}>
         <Shuffle />
-      </button>
+      </div>
     </div>
   )
 };
