@@ -9,7 +9,7 @@ import 'swiper/css';
 
 import './gallery.css';
 
-const IMAGES = new Array(13).fill('');
+const IMAGES = new Array(16).fill('');
 
 export const Gallery = () => {
   return (
