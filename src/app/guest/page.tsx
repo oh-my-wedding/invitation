@@ -20,7 +20,7 @@ export default function Home() {
 
         <div className="relative bg-[#ffffff] shadow-sm font-suit">
           <div className="relative w-full text-white">
-            <div className="whitespace-normal w-full absolute top-32 z-10 px-[17px]">
+            <div className="whitespace-normal w-full absolute top-24 z-10 px-[17px]">
               <img src={CDN_URL + '/wedding-text.png'} />  
             </div>
             <img
