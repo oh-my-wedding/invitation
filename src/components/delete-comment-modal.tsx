@@ -1,16 +1,25 @@
 import { X } from "lucide-react";
 import { Portal } from "@/components/portal";
-import { ChangeEvent, FormEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import toast from "react-simple-toasts";
+import { deleteGuestBook } from "@/utils/api";
 
 interface DeleteCommentModalProps {
   isShow: boolean;
+  id: number;
   onClose?: () => void;
+  refetch: () => Promise<void>;
 }
 
-export const DeleteCommentModal = ({ isShow, onClose }: DeleteCommentModalProps) => {
+export const DeleteCommentModal = ({ isShow, id, onClose, refetch }: DeleteCommentModalProps) => {
   const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    if (!isShow) {
+      setPassword('');
+    }
+  }, [isShow]);
 
   const handleChangeInput = (event: ChangeEvent<HTMLInputElement>) => {
     setPassword(event.target.value);
@@ -22,9 +31,15 @@ export const DeleteCommentModal = ({ isShow, onClose }: DeleteCommentModalProps)
     try {
       setIsLoading(true);
 
-      console.log('password', password);
+      await deleteGuestBook({ id, password });
 
-      toast('삭제되었습니다.');
+      await refetch();
+
+      onClose?.();
+
+      toast('✅ 삭제되었습니다.', { theme: 'light' });
+    } catch {
+      toast('❌ 잘못된 비밀번호입니다.', { theme: 'light' });
     } finally {
       setIsLoading(false);
     }
@@ -32,7 +47,7 @@ export const DeleteCommentModal = ({ isShow, onClose }: DeleteCommentModalProps)
 
   return (
     <Portal isShow={isShow}>
-      <div className="overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full max-h-full flex">
+      <div className="overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full h-screen max-h-full flex">
         <div className="relative p-4 w-full max-w-md max-h-full">
           {/* <!-- Modal content --> */}
           <div className="relative bg-white rounded-lg shadow-sm">

@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { ChevronDown } from 'lucide-react';
 
 import { WriteCommentModal } from "@/components/write-comment-modal";
@@ -15,9 +15,14 @@ export const Comments = () => {
 
   const [data, setData] = useState<GuestBookRow[]>([]);
 
-  useEffect(() => {
-    getGuestBook().then(setData);
+  const fetchGuestBook = useCallback(async () => {
+    const data = await getGuestBook();
+    setData(data);
   }, []);
+
+  useEffect(() => {
+    fetchGuestBook();
+  }, [fetchGuestBook]);
 
   const handleClickMore = () => {
     setPage(prev => prev + 1);
@@ -29,7 +34,7 @@ export const Comments = () => {
     <>
       <div className="px-8">
         {data.slice(0, page * size).map(item => (
-          <Comment key={item.id} data={item} />
+          <Comment key={item.id} data={item} refetch={fetchGuestBook} />
         ))}
       </div>
       {hasMore && (
@@ -49,6 +54,7 @@ export const Comments = () => {
       <WriteCommentModal
         isShow={isModalOpen}
         onClose={() => setIsModalOpen(false)}
+        refetch={fetchGuestBook}
       />
     </>
   );

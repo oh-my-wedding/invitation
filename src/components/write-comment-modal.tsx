@@ -1,6 +1,6 @@
 'use client';
 
-import { ChangeEvent, FormEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import { X } from 'lucide-react';
 import { AvatarFullConfig } from "react-nice-avatar";
@@ -22,17 +22,26 @@ export type WriteCommentData = {
 interface WriteCommentModalProps {
   isShow: boolean;
   onClose: () => void;
+  refetch: () => Promise<void>;
 }
 
-export const WriteCommentModal = ({ isShow, onClose }: WriteCommentModalProps) => {
+const initialData = {
+  name: '',
+  password: '',
+  message: '',
+  avatarConfig: null,
+};
+
+export const WriteCommentModal = ({ isShow, onClose, refetch }: WriteCommentModalProps) => {
   const [isLoading, setIsLoading] = useState(false);
 
-  const [data, setData] = useState<WriteCommentData>({
-    name: '',
-    password: '',
-    message: '',
-    avatarConfig: null,
-  });
+  const [data, setData] = useState<WriteCommentData>(initialData);
+
+  useEffect(() => {
+    if (!isShow) {
+      setData(initialData);
+    }
+  }, [isShow]);
 
   const handleChangeInput = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setData(prev => ({
@@ -61,7 +70,11 @@ export const WriteCommentModal = ({ isShow, onClose }: WriteCommentModalProps) =
         avatar_config: data.avatarConfig,
       });
 
-      toast('작성해주셔서 감사합니다 ❤️');
+      await refetch();
+
+      onClose();
+
+      toast('작성해주셔서 감사합니다 ❤️', { theme: 'light' });
     } finally {
       setIsLoading(false);
     }
@@ -71,7 +84,7 @@ export const WriteCommentModal = ({ isShow, onClose }: WriteCommentModalProps) =
 
   return (
     <Portal isShow={isShow}>
-      <div className="overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full max-h-full flex">
+      <div className="overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center h-screen w-full max-h-full flex">
         <div className="relative p-4 w-full max-w-md max-h-full">
           {/* <!-- Modal content --> */}
           <div className="relative bg-white rounded-lg shadow-sm">

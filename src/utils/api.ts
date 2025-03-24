@@ -31,3 +31,17 @@ type WriteGuestBook = {
 export async function writeGuestBook(data: WriteGuestBook) {
   await supabase.from("guest_book").insert([data]).select();
 }
+
+type DeleteGuestBook = {
+  id: number;
+  password: string;
+};
+
+export async function deleteGuestBook(data: DeleteGuestBook) {
+  const { error } = await supabase.functions.invoke('hello-world', {
+    body: data,
+  });
+  if (error) {
+    throw new Error(error);
+  }
+}

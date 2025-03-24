@@ -7,9 +7,10 @@ import { useState } from 'react';
 
 interface CommentProps {
   data: GuestBookRow;
+  refetch: () => Promise<void>;
 }
 
-export const Comment = ({ data }: CommentProps) => {
+export const Comment = ({ data, refetch }: CommentProps) => {
   const [isShow, setIsShow] = useState(false);
   return (
     <>
@@ -39,7 +40,7 @@ export const Comment = ({ data }: CommentProps) => {
           </div>
         </div>
       </div>
-      <DeleteCommentModal isShow={isShow} onClose={() => setIsShow(false)} />
+      <DeleteCommentModal isShow={isShow} id={data.id} onClose={() => setIsShow(false)} refetch={refetch} />
     </>
   );
 };
