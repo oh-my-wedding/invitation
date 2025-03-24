@@ -22,9 +22,9 @@ export default function Home() {
 
         <div className="relative bg-[#ffffff] shadow-sm font-suit">
           <div className="relative w-full text-white">
-            <h1 className="text-4xl font-sometimesTimes whitespace-normal w-full break-all absolute top-32 z-10">
-              <p>HYEONGYU & HEEJIN</p>
-            </h1>
+            <div className="whitespace-normal w-full absolute top-32 z-10 px-[17px]">
+              <img src={CDN_URL + '/wedding-text.png'} />  
+            </div>
             <img
               src={CDN_URL + '/banner.jpg'}
               alt="Main Image"
@@ -57,7 +57,7 @@ export default function Home() {
         </div>
         
         <SectionView>
-          <div className="flex justify-center mb-4">
+          <div className="flex justify-center mb-8">
             <Image
               src="/invitation/images/duckboon-char.png"
               alt="Main Image"
@@ -66,15 +66,19 @@ export default function Home() {
             />
           </div>
           <div className="tracking-[0.2em] leading-[2em] font-suit font-extralight tracking-normal">
-            <p className="font-sometimesTimes tracking-widest">&quot;You make me want to be a better man.&quot;</p>
-            <p>&quot;넌 날 더 나은 사람이 되고 싶게 만들어.&quot;</p>
-            <p className="text-sm">≪이보다 더 좋을 순 없다≫ 中</p>
-            <br/>
-            <p>서로 다른 우리가 만나,</p>
-            <p>조금 더 따뜻한 세상을 함께 채워가고자 합니다.</p>
-            <br/>
-            <p>저희의 시작을 축복해 주신다면,</p>
-            <p>더없이 큰 기쁨이 될 것입니다.</p>
+            <p>각자 서로 다른 길을</p>
+            <p>걸어온 저희가 이제 부부의 연으로</p>
+            <p>한 길을 걸어가고자 합니다.</p>
+
+            <br />
+
+            <p>항상 처음을 생각하며,</p>
+            <p>서로 아껴주고 사랑하며 살겠습니다.</p>
+
+            <br />
+
+            <p>부디 참석해 주시어 저희의 약속을</p>
+            <p>따뜻한 격려로 축복해 주시기 바랍니다.</p>
           </div>
           <div className="mt-16 leading-[2em]">
             <div>
