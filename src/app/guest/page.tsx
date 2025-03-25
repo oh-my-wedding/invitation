@@ -85,7 +85,7 @@ export default function Home() {
             <br />
 
             <p>따스한 봄 내음 가득한 5월,</p>
-            <p>따뜻한 격려로 축복해 주시기 바랍니다.</p>
+            <p>함께 축복해 주시기 바랍니다.</p>
           </div>
           <div className="mt-16 leading-[2em]">
             <div>
