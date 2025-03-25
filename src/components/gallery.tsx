@@ -9,7 +9,11 @@ import 'swiper/css';
 
 import './gallery.css';
 
-const IMAGES = new Array(16).fill('');
+const filterImages = [1, 3, 9, 10];
+
+const IMAGES = new Array(16).fill('')
+  .map((_, index) => `${CDN_URL}/gallery/photo_${index + 1}.jpg`)
+  .filter((_, index) => !filterImages.includes(index));
 
 export const Gallery = () => {
   return (
@@ -21,11 +25,11 @@ export const Gallery = () => {
         loop
         centeredSlides
       >
-        {IMAGES.map((_, index) => (
+        {IMAGES.map((imageUrl, index) => (
           <SwiperSlide key={index}>
             <div>
               <img
-                src={`${CDN_URL}/gallery/photo_${index + 1}.jpg`}
+                src={imageUrl}
                 alt="Gallery Image"
                 className="w-full h-auto object-contain rounded-md"
               />
