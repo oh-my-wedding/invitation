@@ -213,7 +213,7 @@ export default function Home() {
         <SectionView subTitle="마음 전하실 곳">
           <div className="mt-8">
             <Accordion title="신랑측">
-              <div className="flex flex-col divide-y">
+              <div className="flex flex-col gap-2">
                 <BankAccountNumber
                   role="신랑"
                   name="안현규"
@@ -229,7 +229,7 @@ export default function Home() {
               </div>
             </Accordion>
             <Accordion title="신부측">
-              <div className="flex flex-col divide-y">
+              <div className="flex flex-col gap-2">
                 <BankAccountNumber
                   role="신부"
                   name="홍희진"

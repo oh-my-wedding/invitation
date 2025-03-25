@@ -48,7 +48,7 @@ export const Accordion = ({ title, children }: AccordionProps) => {
           hidden: !open,
         })}
       >
-        <div className="px-6 py-2 text-left font-light bg-white">
+        <div className="p-3 text-left font-light bg-[#eff3e8]">
           {children}
         </div>
       </div>
