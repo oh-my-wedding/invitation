@@ -59,10 +59,10 @@ export default function Home() {
         <SectionView>
           <div className="flex justify-center mb-8">
             <Image
-              src="/invitation/images/duckboon-char.png"
-              alt="Main Image"
-              width={64}
-              height={64}
+              src="/invitation/images/dogs.png"
+              alt="duckboon"
+              width={160}
+              height={200}
             />
           </div>
           <div className="tracking-[0.2em] leading-[2em] font-suit font-extralight tracking-normal">
