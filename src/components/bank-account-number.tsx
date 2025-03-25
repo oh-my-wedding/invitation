@@ -19,7 +19,7 @@ export const BankAccountNumber = ({ role, name, bankName, bankNumber }: BankAcco
 
   return (
     <div className="p-4 bg-white shadow-lg rounded-xl">
-      <div className="my-1 text-sm">
+      <div className="my-1 text-sm font-suit">
         <span className="mr-1">{role}</span>
         <span>{name}</span>
       </div>
