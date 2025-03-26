@@ -12,6 +12,7 @@ import { Accordion } from "@/components/accordion";
 import { BankAccountNumber } from "@/components/bank-account-number";
 import { CDN_URL } from "@/constants/url";
 import { RoadGuide } from "@/components/road-guide";
+import { Location } from "@/components/location";
 
 export default function Home() {
   return (
@@ -116,10 +117,7 @@ export default function Home() {
         </SectionView>
 
         <SectionView title="LOCATION" subTitle="오시는 길">
-          <div className="pt-6">
-            <p className="tracking-[0.3em] text-lg">헤이스가든</p>
-            <p className="tracking-[0.1em] pt-2 text-[#4E4C4B] text-normal">서울 서초구 신흥안길 40-15</p>
-          </div>
+          <Location />
 
           <KakaoMaps />
 
