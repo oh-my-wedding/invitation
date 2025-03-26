@@ -116,9 +116,9 @@ export default function Home() {
         </SectionView>
 
         <SectionView title="LOCATION" subTitle="오시는 길">
-          <div className="pt-8">
-            <p className="tracking-[0.3em]">헤이스가든</p>
-            <p className="tracking-[0.1em] pt-2 text-[#4E4C4B] text-sm">서울 서초구 신흥안길 40-15</p>
+          <div className="pt-6">
+            <p className="tracking-[0.3em] text-lg">헤이스가든</p>
+            <p className="tracking-[0.1em] pt-2 text-[#4E4C4B] text-normal">서울 서초구 신흥안길 40-15</p>
           </div>
 
           <KakaoMaps />
