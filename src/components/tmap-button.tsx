@@ -16,7 +16,7 @@ export const TMapButton = () => {
       onClick={handleClick}
     >
       <Image src="/invitation/icons/tmap-icon.png" alt="T Map" width={20} height={20} />
-      <span className="ml-1 text-sm">
+      <span className="ml-1 text-sm min-w-8">
         티맵
       </span>
     </div>

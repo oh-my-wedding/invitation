@@ -124,7 +124,7 @@ export default function Home() {
           <KakaoMaps />
 
           <div className="pt-4 px-2">
-            <div className="px-4 flex justify-between">
+            <div className="px-2 flex justify-between">
               <NaverMapButton />
               <KakaoMapButton />
               <TMapButton />
