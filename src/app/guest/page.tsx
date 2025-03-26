@@ -55,7 +55,7 @@ export default function Home() {
         </div>
         
         <SectionView>
-          <div className="flex justify-center mb-8">
+          <div className="flex justify-center mb-12">
             <Image
               src="/invitation/images/duckboon-char.png"
               alt="Main Image"
@@ -78,14 +78,9 @@ export default function Home() {
 
             <br />
 
-
-            <p>소중한 날, 여러분의 따뜻한 발걸음과 축하로</p>
-            <p>함께해 주신다면 큰 기쁨이겠습니다.</p>
-
-            <br />
-
-            <p>따스한 봄 내음 가득한 5월,</p>
-            <p>함께 축복해 주시기 바랍니다.</p>
+            <p>푸르른 봄날, 저희의 새 시작을</p>
+            <p>함께해 주시면 감사드리겠습니다.</p>
+            
           </div>
           <div className="mt-16 leading-[2em]">
             <div>
