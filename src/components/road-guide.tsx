@@ -165,17 +165,15 @@ export const RoadGuide = () => {
         <div className="py-4">
           <div className="space-y-2">
             <div className="flex items-start">
-              <div className="flex items-center">
-                <div className="flex items-start">
-                  <Clock className={`h-4 w-4 text-gray-500 mr-2`} />
-                </div>
+              <div className="flex">
+                <Clock className={`h-4 w-4 text-gray-500 mt-1 mr-2`} />
                 <span>운행 시간: 10:30 - 14:30, 10분 간격으로 운영</span>
               </div>
             </div>
 
             <div className="flex items-start">
-              <div className="flex items-center">
-                <Navigation className={`h-4 w-4 text-gray-500 mr-2`} />
+              <div className="flex">
+                <Navigation className={`h-4 w-4 text-gray-500 mt-1 mr-2`} />
                 <span>승차 위치: 양재시민의숲역 4번 출구</span>
               </div>
             </div>
