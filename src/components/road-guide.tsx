@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ArrowRight, Bus, Clock, Navigation, Search, ParkingMeterIcon as Parking } from "lucide-react"
 import { CarSvg } from "@/svg/car-svg";
 import { BusSvg } from "@/svg/bus-svg";
@@ -17,7 +18,9 @@ export const RoadGuide = () => {
           <div className="space-y-2">
             <div className="flex items-start">
               <div className="flex items-center flex-wrap">
-                <Search className={`h-4 w-4 text-gray-500 mr-2`} />
+                <div className="flex">
+                  <Search className={`h-4 w-4 text-gray-500 mr-2`} />
+                </div>
                 <span>네비게이션 : &apos;헤이스가든&apos; 검색</span>
               </div>
             </div>
@@ -45,12 +48,20 @@ export const RoadGuide = () => {
           <span className="font-extralight text-sm flex flex-col gap-4">
           <div className="mb-8">
             <div className="flex items-center gap-1 mb-3">
-              <div className="w-[18px] h-[18px] bg-[#EF7C1C] rounded-full">
-                <p className="text-white text-[14px] font-black leading-[1.3] text-center">3</p>
-              </div>
-              <div className="w-[18px] h-[18px] bg-[#D31145] rounded-full">
-                <p className="text-white text-[6.5px] font-black leading-[2.9]">신분당</p>
-              </div>
+              <Image
+                src="/invitation/line-3.svg"
+                alt="Line 3"
+                width={18}
+                height={18}
+                priority
+              />
+              <Image
+                src="/invitation/line-shin.svg"
+                alt="Line 3"
+                width={18}
+                height={18}
+                priority
+              />
               <h4 className="text-base font-medium">양재역 (8, 9번 출구)</h4>
             </div>
 
@@ -92,9 +103,13 @@ export const RoadGuide = () => {
           </div>
           <div>
             <div className="flex items-center gap-1 mb-3">
-              <div className="w-[18px] h-[18px] bg-[#D31145] rounded-full">
-                <p className="text-white text-[6.5px] font-black leading-[2.9]">신분당</p>
-              </div>
+              <Image
+                src="/invitation/line-shin.svg"
+                alt="Line 3"
+                width={18}
+                height={18}
+                priority
+              />
               <h4 className="text-base font-medium">양재시민의숲역 (1, 4번 출구)</h4>
             </div>
 
@@ -151,7 +166,9 @@ export const RoadGuide = () => {
           <div className="space-y-2">
             <div className="flex items-start">
               <div className="flex items-center">
-                <Clock className={`h-4 w-4 text-gray-500 mr-2`} />
+                <div className="flex items-start">
+                  <Clock className={`h-4 w-4 text-gray-500 mr-2`} />
+                </div>
                 <span>운행 시간: 10:30 - 14:30, 10분 간격으로 운영</span>
               </div>
             </div>
