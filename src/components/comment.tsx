@@ -16,8 +16,8 @@ export const Comment = ({ data, refetch }: CommentProps) => {
     <>
       <div className="border bg-white text-card-foreground mb-4 rounded-lg shadow-lg gsap-opacity border-none">
         <div className="p-6 py-6 relative font-suit">
-          <button className="absolute top-3.5 right-3 p-2" onClick={() => setIsShow(true)}>
-            <X size={16} color="#CCCCCC" />
+          <button className="absolute -top-[8px] -right-[8px] p-1 bg-gray-300 rounded-full shadow-lg" onClick={() => setIsShow(true)}>
+            <X size={12} color="#ffffff" />
           </button>
           <div className="flex flex-col justify-between w-full h-full min-h-24">
             <p className="mb-auto whitespace-pre-wrap break-all text-left font-light">
