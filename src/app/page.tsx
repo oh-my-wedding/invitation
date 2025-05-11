@@ -64,7 +64,7 @@ export default function Home() {
               height={200}
             />
           </div>
-          <div className="tracking-[0.2em] leading-[2em] font-suit font-extralight tracking-normal">
+          <div className="leading-[2em] font-suit font-extralight tracking-normal">
             <p>우연한 만남이 소중한 인연이 되었습니다.</p>
 
             <br />
@@ -136,7 +136,13 @@ export default function Home() {
           <Gallery />
         </SectionView>
 
-        <SectionView subTitle="마음 전하실 곳">
+        <SectionView title="THANKS TO" subTitle="마음 전하는 곳">
+          <div className="leading-[2em] font-suit font-extralight tracking-normal">
+            <p>멀리서도 축하의 마음을</p>
+            <p>전하고 싶으신 분들을 위해</p>
+            <p>계좌번호를 안내드립니다.</p>
+            <p>소중한 축하에 깊이 감사드립니다.</p>
+          </div>
           <div className="mt-8">
             <Accordion title="신랑측">
               <div className="flex flex-col gap-2">
