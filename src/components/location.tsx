@@ -19,6 +19,10 @@ export const Location = () => {
         <span className="tracking-[0.1em] text-[#4E4C4B] text-normal mr-4">{address}</span>
         <Copy size={18} strokeWidth={1.5} onClick={handleClickCopy} />
       </div>
+      <div className="mt-6">
+        <p className="text-sm tracking-[0.1em] text-gray-500">&quot;식장 내 ATM 기기는 마련되어 있지 않으니</p>
+        <p className="text-sm tracking-[0.1em] text-gray-500">참고 부탁드립니다.&quot;</p>
+      </div>
     </div>
   );
 };
